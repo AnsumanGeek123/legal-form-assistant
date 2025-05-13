@@ -57,8 +57,28 @@ legal-form-assist/
 ## 🏗️ System Architecture
 
 ```mermaid
-![image](https://github.com/user-attachments/assets/c5443b8e-fdfb-44d1-992b-fd6b2542e66a)
+graph TD
+  User -->|login, selectForm, submitForm, trackApplication| FormManager
+  User --> AuthService
+  User --> openAI
+  FormManager --> SpeechProcessor
+  FormManager --> BhashiniService
+  FormManager --> LegalHelper
+  FormManager --> AuthService
+  FormManager --> NotificationService
+  LegalHelper --> Guidance
+  AuthService --> NotificationService
 
+  SpeechProcessor[SpeechProcessor\n+initializeRecording()\n+processAudio()\n+convertToText()\n+detectLanguage()]
+  BhashiniService[BhashiniService\n+translateText()\n+processDialect()\n+getLanguageSupport()]
+  LegalHelper[LegalHelper\n+getFieldTooltip()\n+validateLegalTerms()\n+provideGuidance()]
+  Guidance[Guidance\n+videoID()\n+getDummyForm()]
+  NotificationService[NotificationService\n+sendSMS()\n+sendEmail()\n+updateStatus()]
+  openAI[openAI\n+getChatBotSupport()]
+  AuthService[AuthService\n+generateOTP()\n+verifyOTP()\n+maintainSession()]
+  FormManager[FormManager\n+loadFormTemplate()\n+validateForm()\n+saveFormProgress()\n+submitForm()]
+  User[User\n+userId\n+phoneNumber\n+preferredLanguage\n+AdharNumber]
+```
 
 ---
 

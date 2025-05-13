@@ -105,7 +105,7 @@ MIT License
 
 ## 📬 Contact
 - **Project Lead:** Ansuman Das (https://www.linkedin.com/in/ansuman-das-90a9a0226/)
-- **GitHub:** [github.com/AnsumanGeek123/legal-form-assist](https://github.com/yourusername/legal-form-assistant)
+- **GitHub:** [github.com/AnsumanGeek123/legal-form-assist](https://github.com/AnsumanGeek123/legal-form-assistant)
 - **Issues:** Please use the GitHub issues page for bug reports and feature requests.
 
 ## Getting Started
